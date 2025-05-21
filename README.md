@@ -47,7 +47,7 @@ Get the inside scoop! Monitor the efficiency of each algorithm with live, dynami
 ---
 
 ## 🔗 **Live Demo**
-Here is the working link: [Sort Visualizer](#)
+Here is the working link: [Sort Visualizer](https://gauriiiiiiiiiiii.github.io/sort_visualizer/)
 
 ---
 
