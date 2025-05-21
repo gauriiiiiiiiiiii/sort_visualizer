@@ -10,20 +10,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
+
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="stylesheet" href="./style.css" />
     <title>Sort Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <div class="intro-section">
+        <div class="intro-text-container" style="font-size:6em;">
+            <span>S</span><span>O</span><span>R</span><span>T</span>
+            <span class="word-space"> </span> <!-- Add a real space for better separation -->
+            <span>V</span><span>I</span><span>S</span><span>U</span><span>A</span><span>L</span><span>I</span><span>Z</span><span>E</span><span>R</span>
+        </div>
+        <div class="particles" id="particles-container"></div>
+    </div>
+
     <div class="nav-container">
-      <h2 class="title" onclick="window.location.reload()">Sort Visualizer</h2>
       <div class="navbar" id="navbar">
-        <a id="random" onclick="RenderScreen()">Generate array</a>
+        <a id="random" onclick="RenderScreen('random')">Generate Random</a>
         <span class="options">
           <select name="select sort algorithm" id="menu" class="algo-menu">
             <option value="0">Choose algorithm</option>
@@ -32,6 +41,11 @@
             <option value="3">Insertion Sort</option>
             <option value="4">Merge Sort</option>
             <option value="5">Quick Sort</option>
+            <option value="6">Heap Sort</option>
+            <option value="7">Tim Sort</option>
+            <option value="8">Counting Sort</option>
+            <option value="9">Radix Sort</option>
+            <option value="10">Shell Sort</option>
           </select>
         </span>
         <span class="options">
@@ -54,37 +68,40 @@
         <span class="options">
           <select name="speed of visualization" id="menu" class="speed-menu">
             <option value="0">Speed</option>
+            <option value="0.25">0.25x (Slow Motion)</option>
             <option value="0.5">0.50x</option>
             <option value="0.75">0.75x</option>
             <option value="1">1.00x</option>
             <option value="2">2.00x</option>
             <option value="4">4.00x</option>
+            <option value="-1">Chaos Mode</option>
           </select>
         </span>
         <a class="start">Sort</a>
         <a class="icon"><i class="fa fa-bars"></i></a>
       </div>
     </div>
+
+    <div class="controls-stats-container">
+        <div class="data-controls">
+            </div>
+         <div class="stats-panel">
+              <div class="stat-item">🕒 Time: <span id="time-taken">0 ms</span></div>
+              <div class="stat-item">🔁 Comparisons: <span id="comparisons-count">0</span></div>
+              <div class="stat-item">🔄 Swaps: <span id="swaps-count">0</span></div>
+         </div>
+    </div>
+
+
     <div class="center">
       <div class="array"></div>
     </div>
+
     <footer class="footer">
       <p>Created with <i class="fa fa-heart"></i> by Gauri</p>
-      <p>
-        <a
-          href="https://www.linkedin.com/in/gauri-agarwal-381798203/"
-          target="_blank"
-          class="link"
-        >
-          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/SheCodesTech" target="_blank" class="link">
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </a>
-      </p>
-    </footer>
-    <script src="./scripts/app.js"></script>
-    <script src="./scripts/helper.js"></script>
-    <script src="./scripts/sort-algorithms.js"></script>
+      </footer>
+    <audio id="compare-sound" src="https://www.soundjay.com/buttons/beep-07.mp3"></audio>
+    <audio id="swap-sound" src="https://www.soundjay.com/buttons/button-10.mp3"></audio>
+    <script src="main.js"></script>
   </body>
 </html>
